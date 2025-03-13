@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class HomePageTests extends TestBase{
@@ -8,10 +9,19 @@ public class HomePageTests extends TestBase{
         System.out.println("--------" + "\n");
 
         driver.get("https://telranedu.web.app/home");
-        driver.findElement(By.xpath("//html/body/div/div/div/div/h1"));
-        driver.findElement(By.cssSelector("div:nth-child(2)>div>div>h1"));
+        Assert.assertTrue(isHomeComponentPresent(), "Элемент не найден на странице");
+        System.out.println("Элемент 'HomeComponent' найден на домашней странице");
+    }
 
 
+    public boolean isHomeComponentPresent() {
+        System.out.println("Ищем 'HomeComponent' на домашней странице");
+        return isElementPresent(By.xpath("//html/body/div/div/div/div/h1"));
+    }
+
+    private boolean isElementPresent(By locator) {
+        System.out.println("Есть лит элемент [" + locator + "] на странице");
+        return driver.findElements(locator).size()>0;
     }
 
 }
