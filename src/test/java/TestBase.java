@@ -1,5 +1,7 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -24,4 +26,60 @@ public class TestBase {
     }
 
 
+    protected boolean isElementPresent(By locator) {
+        System.out.println("Есть лит элемент [" + locator + "] на странице");
+        return driver.findElements(locator).size()>0;
+    }
+
+    protected void click(By locator) {
+        driver.findElement(locator).click();
+    }
+
+    protected void type(By locator, String text) {
+        click(locator); // Новый клик через Метод
+
+        driver.findElement(locator).clear(); // очистил поле на всякий от автозаполнения
+        driver.findElement(locator).sendKeys(text); // ввел валидное значение
+    }
+
+    protected void login(String email, String password) {
+        //click on login link
+        click(By.xpath("//a[(.= 'LOGIN')]"));
+        //enter email
+        type(By.name("email"), email);
+        //enter password
+        type(By.name("password"), password);
+        //click on Login button
+        click(By.name("login"));
+        // assert that Sign out is present
+        Assert.assertTrue(isElementPresent(By.xpath("//button [.='Sign Out']")));
+    }
+
+    protected void register(String email, String password) {
+        //click on Login link //a[(.= 'LOGIN')]
+        click(By.xpath("//a[(.= 'LOGIN')]"));
+
+        // enter email in input By.name("email")
+        //driver.findElement(By.name("email")).click(); нажал на поле email - Старый клик
+        type(By.name("email"), email);
+
+        // enter password in input By.name ("password")
+        //driver.findElement(By.name("password")).click();  нажал на поле password  - Старый клик
+        click(By.name("password")); // Новый клик через Метод
+
+        //driver.findElement(By.name("password")).clear();  очистил поле на всякий от автозаполнения
+        //driver.findElement(By.name("password")).sendKeys("Password101$");  ввел валидное значение
+        type(By.name("password"), password);
+
+        // click on registration button By.name ('registration')
+        //driver.findElement(By.name("registration")).click();
+        click(By.name("registration"));
+
+        // Assert that button //button [.='Sing Out'] is present
+        Assert.assertTrue(isElementPresent(By.xpath("//button [.='Sign Out']")));
+    }
+
+    protected void logout() {
+        click(By.xpath("//button [.='Sign Out']"));
+    }
 }

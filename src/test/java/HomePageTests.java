@@ -19,9 +19,4 @@ public class HomePageTests extends TestBase{
         return isElementPresent(By.xpath("//html/body/div/div/div/div/h1"));
     }
 
-    private boolean isElementPresent(By locator) {
-        System.out.println("Есть лит элемент [" + locator + "] на странице");
-        return driver.findElements(locator).size()>0;
-    }
-
 }
