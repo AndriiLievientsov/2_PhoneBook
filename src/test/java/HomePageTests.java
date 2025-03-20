@@ -19,4 +19,5 @@ public class HomePageTests extends TestBase{
         return isElementPresent(By.xpath("//html/body/div/div/div/div/h1"));
     }
 
+
 }

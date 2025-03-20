@@ -38,9 +38,9 @@ public class CreateAccountPositiveTest  extends TestBase{
 
     @Test
     public void createAccountPositiveTest () {
-        register("anlii2027test2028@gmail.com", "Password102$");
+        register("anlii20280test2028@gmail.com", "Password102$");
         logout();
-        login("anlii2027test2028@gmail.com", "Password102$");
+        login("anlii20280test2028@gmail.com", "Password102$");
 
         System.out.println("Создал. Вышел И зашел");
     }
