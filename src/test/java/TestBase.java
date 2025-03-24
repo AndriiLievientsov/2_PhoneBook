@@ -26,23 +26,23 @@ public class TestBase {
     }
 
 
-    protected boolean isElementPresent(By locator) {
+    public boolean isElementPresent(By locator) {
         System.out.println("Есть лит элемент [" + locator + "] на странице");
         return driver.findElements(locator).size()>0;
     }
 
-    protected void click(By locator) {
+    public void click(By locator) {
         driver.findElement(locator).click();
     }
 
-    protected void type(By locator, String text) {
+    public void type(By locator, String text) {
         click(locator); // Новый клик через Метод
 
         driver.findElement(locator).clear(); // очистил поле на всякий от автозаполнения
         driver.findElement(locator).sendKeys(text); // ввел валидное значение
     }
 
-    protected void login(String email, String password) {
+    public void login(String email, String password) {
         //click on login link
         click(By.xpath("//a[(.= 'LOGIN')]"));
         //enter email
@@ -55,7 +55,7 @@ public class TestBase {
         Assert.assertTrue(isElementPresent(By.xpath("//button [.='Sign Out']")));
     }
 
-    protected void register(String email, String password) {
+    public void register(String email, String password) {
         //click on Login link //a[(.= 'LOGIN')]
         click(By.xpath("//a[(.= 'LOGIN')]"));
 
@@ -79,7 +79,7 @@ public class TestBase {
         Assert.assertTrue(isElementPresent(By.xpath("//button [.='Sign Out']")));
     }
 
-    protected void logout() {
+    public void logout() {
         click(By.xpath("//button [.='Sign Out']"));
     }
 }
