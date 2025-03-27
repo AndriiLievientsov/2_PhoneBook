@@ -2,8 +2,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CreateAccountPositiveTest  extends TestBase{
-
+public class CreateAccountPositiveTest extends TestBase{
     @Test
     public void createAccountPositiveTest1 () {
         //click on Login link //a[(.= 'LOGIN')]
@@ -44,6 +43,4 @@ public class CreateAccountPositiveTest  extends TestBase{
 
         System.out.println("Создал. Вышел И зашел");
     }
-
-
 }
