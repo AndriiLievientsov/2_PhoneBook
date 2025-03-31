@@ -22,6 +22,9 @@ public class TestBase01 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
+    //* данный метод в false потому что мне нужно смотреть на результаты в
+    //* браузере но это не оч круто. в идеале надо true что бы тест завершался
+    //* закртием в данном случае браузера
     @AfterMethod (enabled = false)
     public void tearDown() {
         driver.quit();
@@ -75,6 +78,7 @@ public class TestBase01 {
     }
 
     public void logout () {
+
         click(By.xpath("//button [.='Sign Out']"));
     }
 }
