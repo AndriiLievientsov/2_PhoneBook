@@ -41,9 +41,11 @@ public class TestBase_1_5 {
         driver.findElement(locator).sendKeys(text);
     }
 
+
     public void NewRegister (String First, String Second, String Email,
                              String Password, String ConfirmPassword) {
-        select(By.xpath("//input[.='gender-male']"));
+
+        driver.findElement(By.name("Gender")).click();
 
         select(By.name("FirstName"));
         typeData(By.name("FirstName"), First);
@@ -60,11 +62,37 @@ public class TestBase_1_5 {
         select(By.name("ConfirmPassword"));
         typeData(By.name("ConfirmPassword"), ConfirmPassword);
 
-        Assert.assertTrue(isElementPresent(By.xpath("//input[.='Continue']")));
+        driver.findElement(By.name("register-button")).click();
+        driver.get("https://demowebshop.tricentis.com/registerresult/1");
+        driver.findElement(By.xpath("//input[@value='Continue']")).click();
+
+        driver.get("https://demowebshop.tricentis.com/");
+        Assert.assertTrue(isElementPresent(By.xpath("//a[normalize-space()='Log out']")));
 
     }
 
+    public void logoutAfterRegister () {
+        driver.get("https://demowebshop.tricentis.com/");
+        select(By.xpath("//a[normalize-space()='Log out']"));
+    }
 
+    public void login (String Email, String Password) {
+        select(By.xpath("//a[normalize-space()='Log in']"));
+
+        select(By.name("Email"));
+        typeData(By.name("Email"),Email);
+
+        select(By.name("Password"));
+        typeData(By.name("Password"), Password);
+
+        select(By.xpath("//input[@value='Log in']"));
+
+        Assert.assertTrue(isElementPresent(By.xpath("//a[normalize-space()='Log out']")));
+    }
+
+    public void logoutAfterLogin () {
+        select(By.xpath("//a[normalize-space()='Log out']"));
+    }
 
 
 

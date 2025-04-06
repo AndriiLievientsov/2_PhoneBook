@@ -78,7 +78,6 @@ public class TestBase01 {
     }
 
     public void logout () {
-
         click(By.xpath("//button [.='Sign Out']"));
     }
 }
