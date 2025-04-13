@@ -25,7 +25,14 @@ public class TestBase {
         driver.quit();
     }
 
-
+//Ниже пример JavaDoc просто даем этот код метода gpt и просим написать javaDoc
+    /**
+     * Проверяет наличие элемента на текущей странице по заданному локатору.
+     *
+     * @param locator локатор элемента, который необходимо проверить (например, By.id, By.name и т.д.).
+     * @return {@code true}, если элемент присутствует на странице (найден хотя бы один),
+     *         {@code false} — если элемент отсутствует.
+     */
     public boolean isElementPresent(By locator) {
         System.out.println("Есть лит элемент [" + locator + "] на странице");
         return driver.findElements(locator).size()>0;
