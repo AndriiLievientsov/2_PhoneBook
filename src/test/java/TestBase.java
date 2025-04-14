@@ -175,4 +175,24 @@ public class TestBase {
         click(By.className("contact-item_card__2SOIM"));
         click(By.xpath("//button[contains(text(),'Remove')]"));
     }
+
+    protected void clickContactButton() {
+        click(By.xpath("//a[contains(text(),'CONTACTS')]"));
+    }
+
+    protected void dellAllContacts() {
+        List <WebElement> elements = driver.findElements(By.cssSelector("h2"));
+        for (WebElement h2 : elements){
+            dellContactFor(h2);
+        }
+    }
+
+    public void dellContactFor (WebElement contact) {
+        contact.click();
+        click(By.xpath("//button[contains(text(),'Remove')]"));
+    }
+
+    public void clickHomeButton () {
+        click(By.xpath("//a[contains(text(),'HOME')]"));
+    }
 }
