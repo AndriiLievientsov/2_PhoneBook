@@ -22,8 +22,6 @@ public class DeleteContactTests extends TestBase {
     public void selectAndDellContact() {
         clickContactButton();
         dellAllContacts();
-        clickContactButton();
-
     }
 
     @AfterMethod
