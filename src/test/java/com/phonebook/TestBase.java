@@ -1,8 +1,6 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+package com.phonebook;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,8 +13,9 @@ import java.util.List;
 
 public class TestBase {
 
+    protected final String CONTACT_LOCATOR = "contact-item_card__2SOIM";
     WebDriver driver;
-
+    WebDriverWait wait;
 
     @BeforeMethod
     public void setUp () {
@@ -24,10 +23,11 @@ public class TestBase {
         driver.get("https://telranedu.web.app/home");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     }
 
-    @AfterMethod (enabled = false)
+    @AfterMethod (enabled = true)
     public void tearDown () {
         driver.quit();
     }
@@ -50,10 +50,16 @@ public class TestBase {
     }
 
     public void type(By locator, String text) {
-        click(locator); // Новый клик через Метод
 
-        driver.findElement(locator).clear(); // очистил поле на всякий от автозаполнения
-        driver.findElement(locator).sendKeys(text); // ввел валидное значение
+        if (text != null) {
+
+            click(locator); // Новый клик через Метод
+
+            driver.findElement(locator).clear(); // очистил поле на всякий от автозаполнения
+            driver.findElement(locator).sendKeys(text); // ввел валидное значение
+        }
+
+
     }
 
     public void login(String email, String password) {
@@ -97,9 +103,9 @@ public class TestBase {
         click(By.xpath("//button [.='Sign Out']"));
     }
 
-    protected void fillInRegistrationForm(String email, String password) {
-        type(By.name("email"), email);
-        type(By.name("password"), password);
+    protected void fillInRegistrationForm(User user) {
+        type(By.name("email"), user.getEmail());
+        type(By.name("password"), user.getPassword());
     }
 
     protected void clickRegistrationButton() {
@@ -194,5 +200,36 @@ public class TestBase {
 
     public void clickHomeButton () {
         click(By.xpath("//a[contains(text(),'HOME')]"));
+    }
+
+    public boolean isHomeComponentPresent() {
+        System.out.println("Looking for 'homecomponent' on the home page");
+        return isElementPresent(By.xpath("//html/body/div/div/div/div/h1"));
+    }
+
+
+    protected void deleteAllContacts() {
+        try {
+            while (hasContacts()) {
+                int sizeBefore = actualSizeOfContacts();
+                deleteOneContact();
+                wait.until((WebDriver d) -> actualSizeOfContacts() < sizeBefore);
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected int actualSizeOfContacts() {
+        if(hasContacts()) {
+            //считает количество контактов по классу contact-item_card__2SOIM
+            return driver.findElements(By.className(CONTACT_LOCATOR)).size();
+        }
+        return 0;
+    }
+
+    private boolean hasContacts () {
+        return isElementPresent(By.className(CONTACT_LOCATOR));
     }
 }

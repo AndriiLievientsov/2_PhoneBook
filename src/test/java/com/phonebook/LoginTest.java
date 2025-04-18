@@ -1,8 +1,9 @@
-import org.openqa.selenium.By;
+package com.phonebook;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginPositiveTest extends TestBase {
+public class LoginTest extends TestBase {
 
     @Test
     public void loginExistedUserPositiveTest () {
@@ -13,7 +14,10 @@ public class LoginPositiveTest extends TestBase {
         // type(By.name("email"), "anliji225test.2023@gmail.com");
         // enter password
         // type(By.name("password"), "Password101$");
-        fillInRegistrationForm("anliji225test.2023@gmail.com","Password101$");
+        //fillInRegistrationForm(new User("anliji225test.2023@gmail.com", "Password101$"));
+        fillInRegistrationForm(new User()
+                .setPassword("anliji225test.2023@gmail.com")
+                .setEmail("Password101$"));
         // click on Login button
         // click(By.name("login"));
         clickOnLoginButton();
@@ -27,5 +31,16 @@ public class LoginPositiveTest extends TestBase {
         login("anlii2025test.2025@gmail.com", "Password101$");
 
     }
+
+    @Test
+    public void loginNegativeWOEmailTest () {
+        clickLoginLink();
+        fillInRegistrationForm(new User()
+                //.setPassword("anliji225test.2023@gmail.com")
+                .setEmail("Password101$"));
+        clickOnLoginButton();
+        Assert.assertTrue(isAlertPresent());
+    }
+
 
 }

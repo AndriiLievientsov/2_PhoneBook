@@ -1,3 +1,5 @@
+package com.phonebook;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -6,7 +8,9 @@ public class CreateAccountTest extends TestBase {
     @Test
     public void createAccountPositiveTest1() {
         clickLoginLink();
-        fillInRegistrationForm("anlii205test.2023@gmail.com", "Password101$");
+        fillInRegistrationForm(new User()
+                .setPassword("anliji225test.2023@gmail.com")
+                .setEmail("Password101$"));
         clickRegistrationButton();
         Assert.assertTrue(isSignOutButtonPresent());
 
@@ -32,7 +36,9 @@ public class CreateAccountTest extends TestBase {
         SoftAssert softAssert = new SoftAssert();
 
         clickLoginLink();
-        fillInRegistrationForm("anlii205test.2023@gmail.com", "Password101$");
+        fillInRegistrationForm(new User()
+                .setPassword("anliji225test.2023@gmail.com")
+                .setEmail("Password101$"));
         clickRegistrationButton();
         //Assert.assertFalse(isSignOutButtonPresent());
         //Assert.assertTrue(isAlertPresent());
