@@ -147,26 +147,28 @@ public class TestBase {
         }
         return false;
     }
-
+    //(name, "LastName", "1234567890", "abc1@gmail.com", "Ukraine, Kutuzova", "description")
     protected void addNewContactPositiveData(String name) {
         clickAddLink();
-        fillInNewContactForm(
-                name,
-                "LastName",
-                "1234567890",
-                "abc1@gmail.com",
-                "Ukraine, Kutuzova",
-                "description");
+        fillInNewContactForm(new Contact()
+                .setName(name)
+                .setLastName("LastName")
+                .setPhone("1234567890")
+                .setEmail("abc1@gmail.com")
+                .setAddress("Ukraine, Kutuzova")
+                .setDescription("description"));
+
+
         clickSaveContactButton();
     }
 
-    private void fillInNewContactForm(String name, String lastName, String phone, String email, String address, String description) {
-        type(By.xpath("//input[@placeholder='Name']"), name);
-        type(By.xpath("//input[@placeholder='Last Name']"), lastName);
-        type(By.xpath("//input[@placeholder='Phone']"), phone);
-        type(By.xpath("//input[@placeholder='email']"), email);
-        type(By.xpath("//input[@placeholder='Address']"), address);
-        type(By.xpath("//input[@placeholder='description']"), description);
+    private void fillInNewContactForm(Contact constructor) {
+        type(By.xpath("//input[@placeholder='Name']"), constructor.getName());
+        type(By.xpath("//input[@placeholder='Last Name']"), constructor.getLastName());
+        type(By.xpath("//input[@placeholder='Phone']"), constructor.getPhone());
+        type(By.xpath("//input[@placeholder='email']"), constructor.getEmail());
+        type(By.xpath("//input[@placeholder='Address']"), constructor.getAddress());
+        type(By.xpath("//input[@placeholder='description']"), constructor.getDescription());
     }
 
     private void clickSaveContactButton() {
