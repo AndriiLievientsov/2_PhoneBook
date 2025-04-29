@@ -14,9 +14,15 @@ public class AddContactsTests extends TestBase {
         login("anlii2025test.2025@gmail.com", "Password101$");
     }
 
-    @Test(invocationCount = 5)
+    @Test(invocationCount = 1, priority = 1)
     public void addContactPositiveTest() {
         addNewContactPositiveData(CONTACT_NAME);
+        Assert.assertTrue(isContactAdded(CONTACT_NAME));
+    }
+
+    @Test(priority = 2)
+    public void addContactPositiveWODescriptionTest() {
+        addNewContactPositiveDataWODescription(CONTACT_NAME);
         Assert.assertTrue(isContactAdded(CONTACT_NAME));
     }
 
@@ -24,5 +30,4 @@ public class AddContactsTests extends TestBase {
     public void postCondition () {
         deleteOneContact();
     }
-
 }
