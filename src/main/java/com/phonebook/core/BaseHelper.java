@@ -2,12 +2,24 @@ package com.phonebook.core;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class BaseHelper {
+
+
+    protected   WebDriver driver;
+    protected  WebDriverWait wait;
+
+    public BaseHelper(WebDriver driver, WebDriverWait wait) {
+        this.driver  = driver;
+        this.wait = wait;
+    }
+
+//Ниже пример JavaDoc просто даем этот код метода gpt и просим написать javaDoc
     /**
      * Проверяет наличие элемента на текущей странице по заданному локатору.
      *
@@ -36,7 +48,7 @@ public class BaseHelper {
 
     }
 
-    protected boolean isAlertPresent() {
+    public boolean isAlertPresent() {
         Alert alert = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.alertIsPresent());
         if (alert == null) {
             return false;

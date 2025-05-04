@@ -1,10 +1,18 @@
 package com.phonebook.fw;
 
+import com.phonebook.core.BaseHelper;
 import com.phonebook.model.User;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class UseHelper {
+public class UserHelper extends BaseHelper {
+
+    public UserHelper(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
+    }
+
     public void login(String email, String password) {
         //click on login link
         click(By.xpath("//a[(.= 'LOGIN')]"));
@@ -46,28 +54,28 @@ public class UseHelper {
         click(By.xpath("//button [.='Sign Out']"));
     }
 
-    protected void fillInRegistrationForm(User user) {
+    public void fillInRegistrationForm(User user) {
         type(By.name("email"), user.getEmail());
         type(By.name("password"), user.getPassword());
     }
 
-    protected void clickRegistrationButton() {
+    public void clickRegistrationButton() {
         click(By.name("registration"));
     }
 
-    protected void clickLoginLink() {
+    public void clickLoginLink() {
         click(By.xpath("//a[(.= 'LOGIN')]"));
     }
 
-    protected boolean isSignOutButtonPresent() {
+    public boolean isSignOutButtonPresent() {
         return isElementPresent(By.xpath("//button [.='Sign Out']"));
     }
 
-    protected void clickOnLoginButton() {
+    public void clickOnLoginButton() {
         click(By.name("login"));
     }
 
-    protected boolean isError409Present() {
+    public boolean isError409Present() {
         return isElementPresent(By.xpath("//div[.= 'Registration failed with code 409']"));
     }
 }

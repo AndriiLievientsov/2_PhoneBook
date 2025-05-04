@@ -10,25 +10,25 @@ public class DeleteContactTests_Anlii_HW extends TestBase {
 
     @BeforeMethod
     public void preCondition() {
-        login("anlii2025test.2025@gmail.com", "Password101$");
+        app.getUserHelper().login("anlii2025test.2025@gmail.com", "Password101$");
 
     }
 
     @Test(invocationCount = 5)
     public void addContactPositiveTest() {
-        addNewContactPositiveData(CONTACT_NAME);
-        Assert.assertTrue(isContactAdded(CONTACT_NAME));
+        app.getContactHelper().addNewContactPositiveData(CONTACT_NAME);
+        Assert.assertTrue(app.getContactHelper().isContactAdded(CONTACT_NAME));
     }
 
     @Test
     public void selectAndDellContact() {
-        clickContactButton();
-        dellAllContacts();
+        app.getContactHelper().clickContactButton();
+        app.getContactHelper().dellAllContacts();
     }
 
     @AfterMethod
     public void postCondition() {
-        logout();
+        app.getUserHelper().logout();
     }
 
 

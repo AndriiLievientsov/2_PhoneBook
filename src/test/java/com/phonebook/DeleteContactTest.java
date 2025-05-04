@@ -11,17 +11,17 @@ public class DeleteContactTest extends TestBase{
 
     @BeforeMethod
     public void precondition() {
-        login("anlii20280test2028@gmail.com", "Password102$");
-        addNewContactPositiveData(CONTACT_NAME);
+        app.getUserHelper().login("anlii20280test2028@gmail.com", "Password102$");
+        app.getContactHelper().addNewContactPositiveData(CONTACT_NAME);
     }
 
     @Test
     public void createOneAndDeleteOneContractTest() {
-        int sizeBefore = actualSizeOfContacts();
+        int sizeBefore = app.getContactHelper().actualSizeOfContacts();
         System.out.println("Size before deletion: " + sizeBefore);
-        deleteOneContact();
-        wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.className(CONTACT_LOCATOR),sizeBefore));
-        int sizeAfterDelete = actualSizeOfContacts();
+        app.getContactHelper().deleteOneContact();
+        app.wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.className(app.getContactHelper().CONTACT_LOCATOR),sizeBefore));
+        int sizeAfterDelete = app.getContactHelper().actualSizeOfContacts();
         System.out.println("Size after deletion: " + sizeAfterDelete);
         Assert.assertEquals(sizeBefore-1, sizeAfterDelete, "Count is not equal");
 
@@ -29,8 +29,8 @@ public class DeleteContactTest extends TestBase{
 
     @Test
     public void deleteAllContactsTest () {
-        deleteAllContacts();
-        Assert.assertEquals(actualSizeOfContacts(), 0, "Count is not equal");
+        app.getContactHelper().deleteAllContacts();
+        Assert.assertEquals(app.getContactHelper().actualSizeOfContacts(), 0, "Count is not equal");
     }
 
 }

@@ -11,23 +11,23 @@ public class AddContactsTests extends TestBase {
 
     @BeforeMethod
     public void preCondition() {
-        login("anlii2025test.2025@gmail.com", "Password101$");
+        app.getUserHelper().login("anlii2025test.2025@gmail.com", "Password101$");
     }
 
     @Test(invocationCount = 1, priority = 1)
     public void addContactPositiveTest() {
-        addNewContactPositiveData(CONTACT_NAME);
-        Assert.assertTrue(isContactAdded(CONTACT_NAME));
+        app.getContactHelper().addNewContactPositiveData(CONTACT_NAME);
+        Assert.assertTrue(app.getContactHelper().isContactAdded(CONTACT_NAME));
     }
 
     @Test(priority = 2)
     public void addContactPositiveWODescriptionTest() {
-        addNewContactPositiveDataWODescription(CONTACT_NAME);
-        Assert.assertTrue(isContactAdded(CONTACT_NAME));
+        app.getContactHelper().addNewContactPositiveDataWODescription(CONTACT_NAME);
+        Assert.assertTrue(app.getContactHelper().isContactAdded(CONTACT_NAME));
     }
 
     @AfterMethod (enabled = false)
     public void postCondition () {
-        deleteOneContact();
+        app.getContactHelper().deleteOneContact();
     }
 }

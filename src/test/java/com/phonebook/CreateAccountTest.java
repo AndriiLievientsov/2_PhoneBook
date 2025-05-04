@@ -8,26 +8,26 @@ import org.testng.asserts.SoftAssert;
 public class CreateAccountTest extends TestBase {
     @Test
     public void createAccountPositiveTest1() {
-        clickLoginLink();
-        fillInRegistrationForm(new User()
+        app.getUserHelper().clickLoginLink();
+        app.getUserHelper().fillInRegistrationForm(new User()
                 .setPassword("anliji225test.2023@gmail.com")
                 .setEmail("Password101$"));
-        clickRegistrationButton();
-        Assert.assertTrue(isSignOutButtonPresent());
+        app.getUserHelper().clickRegistrationButton();
+        Assert.assertTrue(app.getUserHelper().isSignOutButtonPresent());
 
     }
 
     @Test
     public void createAccountPositiveTest2() {
-        register("anlii2025test.2025@gmail.com", "Password101$");
+        app.getUserHelper().register("anlii2025test.2025@gmail.com", "Password101$");
 
     }
 
     @Test
     public void createAccountPositiveTest() {
-        register("anlii20280test2028@gmail.com", "Password102$");
-        logout();
-        login("anlii20280test2028@gmail.com", "Password102$");
+        app.getUserHelper().register("anlii20280test2028@gmail.com", "Password102$");
+        app.getUserHelper().logout();
+        app.getUserHelper().login("anlii20280test2028@gmail.com", "Password102$");
 
         System.out.println("Создал. Вышел И зашел");
     }
@@ -36,16 +36,16 @@ public class CreateAccountTest extends TestBase {
     public void createAccountNegativeTest1() {
         SoftAssert softAssert = new SoftAssert();
 
-        clickLoginLink();
-        fillInRegistrationForm(new User()
+        app.getUserHelper().clickLoginLink();
+        app.getUserHelper().fillInRegistrationForm(new User()
                 .setPassword("anliji225test.2023@gmail.com")
                 .setEmail("Password101$"));
-        clickRegistrationButton();
+        app.getUserHelper().clickRegistrationButton();
         //Assert.assertFalse(isSignOutButtonPresent());
         //Assert.assertTrue(isAlertPresent());
         //Assert.assertTrue(isError409Present());
-        softAssert.assertTrue(isAlertPresent());
-        softAssert.assertTrue(isError409Present());
+        softAssert.assertTrue(app.getUserHelper().isAlertPresent());
+        softAssert.assertTrue(app.getUserHelper().isError409Present());
 
         // вызывает после всего тесты и фейлит если хоть один сфейлился.но это для softAssert
         softAssert.assertAll();
