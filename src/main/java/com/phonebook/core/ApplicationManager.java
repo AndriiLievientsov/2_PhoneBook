@@ -34,8 +34,8 @@ public class ApplicationManager {
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("windows-size=1920x1080");
-            options.addArguments("headless"); // запуск браузера без графического интерфейса
-            driver = new ChromeDriver(options);
+            //options.addArguments("headless"); // запуск браузера без графического интерфейса
+            driver = new ChromeDriver(); //тут было ChromeDriver(options); но сказали что пока не надо
         }
 
         else if (browser.equalsIgnoreCase("firefox")){

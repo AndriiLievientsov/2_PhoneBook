@@ -5,11 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 
 public class BaseHelper {
-
+     Logger logger = LoggerFactory.getLogger(BaseHelper.class);
 
     protected   WebDriver driver;
     protected  WebDriverWait wait;
@@ -34,6 +36,7 @@ public class BaseHelper {
 
     public void click(By locator) {
         driver.findElement(locator).click();
+        logger.info("["+ locator + "] is pressed");
     }
 
     public void type(By locator, String text) {

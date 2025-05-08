@@ -1,5 +1,8 @@
 <configuration>
     <timestamp key="bySecond" datePattern="dd'T'HHmmss"/>
+
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <!--    ! паттерн вывода логов-->
         <!--%d{HH:mm:ss.SSS} - Временная метка в часах, минутах, секундах и миллисекундах.-->
@@ -9,10 +12,20 @@
         <!-- -%kvp- - Пары ключ-значение, если есть.-->
         <!--%msg - Само сообщение лога.-->
         <!--%n - Символ новой строки, зависящий от платформы.-->
+
+
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
+                <marker>LOGBACK_INIT</marker>
+            </evaluator>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%kvp- %msg%n</pattern>
         </encoder>
     </appender>
+
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>src/test_logs/log-${bySecond}.log</file>
         <append>true</append>
@@ -21,8 +34,10 @@
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} -%kvp- %msg%n</pattern>
         </encoder>
     </appender>
+
     <logger name="org.testng.internal.Utils" level="warn"/>
     <!-- ! <root level="debug">&ndash;&gt; Меняем уровень логирования на INFO-->
+
     <root level="info">
         <!--        DEBUG - Отладочные сообщения, используемые для диагностики.-->
         <!--        INFO - Информационные сообщения, описывающие нормальную работу.-->
