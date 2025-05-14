@@ -1,0 +1,13 @@
+20:25:21.701 [main] INFO  HW2.TestBaseHW2 -- Успешное ДЗ 2
+20:25:22.098 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: //a[normalize-space()='Log in']] is pressed
+20:25:22.195 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.name: Email] is pressed
+20:25:22.344 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.name: Password] is pressed
+20:25:23.467 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: //input[@value='Log in']] is pressed
+20:25:23.545 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: (//input[@class='button-2 product-box-add-to-cart-button'])[3]] is pressed
+20:25:24.819 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: //div[@class='header-logo']//img[1]] is pressed
+20:25:24.867 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: (//input[@class='button-2 product-box-add-to-cart-button'])[2]] is pressed
+20:25:25.932 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: //div[@class='header-logo']//img[1]] is pressed
+20:25:26.002 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: (//input[@class='button-2 product-box-add-to-cart-button'])[1]] is pressed
+20:25:27.150 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: //div[@class='header-logo']//img[1]] is pressed
+20:25:27.763 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: (//span[@class='cart-label'])[1]] is pressed
+20:25:28.445 [main] INFO  HW2.coreHW2.BaseHelperHW2 -- [By.xpath: //a[normalize-space()='Log out']] is pressed

@@ -13,7 +13,7 @@ import java.time.Duration;
 public class BaseHelper {
      Logger logger = LoggerFactory.getLogger(BaseHelper.class);
 
-    protected   WebDriver driver;
+    protected  WebDriver driver;
     protected  WebDriverWait wait;
 
     public BaseHelper(WebDriver driver, WebDriverWait wait) {
