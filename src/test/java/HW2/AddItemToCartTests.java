@@ -33,4 +33,17 @@ public class AddItemToCartTests extends TestBaseHW2 {
 
         System.out.println("Юху вроде ОК");
     }
+
+    @Test
+    public void checkingItemInCatt () {
+        appHW2.getUserHelperHW2().login("b5555@gmail.com",
+                "b5555@gmail.com");
+
+        appHW2.getCartHW2().selectProducts();
+        appHW2.getCartHW2().selectShoppingCart();
+        appHW2.getCartHW2().isItemInCart();
+
+        System.out.println("Успешный Успех!! ");
+
+    }
 }

@@ -19,13 +19,13 @@ public class BaseHelperHW2 {
     }
 
     public boolean isElementPresent(By locator) {
-        System.out.println("Есть лит элемент [" + locator + "] на странице");
+     // System.out.println("Есть лит элемент [" + locator + "] на странице");
         return driver.findElements(locator).size() > 0;
     }
 
     public void select (By locator) {
         driver.findElement(locator).click();
-        logger.info("["+ locator + "] is pressed");
+       // logger.info("["+ locator + "] is pressed");
     }
 
     public void typeData (By locator, String text) {

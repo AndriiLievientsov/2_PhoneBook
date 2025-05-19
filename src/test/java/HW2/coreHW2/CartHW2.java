@@ -24,4 +24,10 @@ public class CartHW2 extends BaseHelperHW2{
         Assert.assertTrue(isElementPresent(By.xpath("//input[@class='button-2 update-cart-button']")));
     }
 
+    //поиск есть ли что-то по тексту на сайте
+    public void isItemInCart () {
+        Assert.assertTrue(isElementPresent(By.linkText("Build your own cheap computer")));
+        System.out.println("Ожидалось, что товар 'Build your own cheap computer' будет в корзине.");
+    }
+
 }
