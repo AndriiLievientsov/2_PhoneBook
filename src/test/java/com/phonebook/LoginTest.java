@@ -1,18 +1,19 @@
 package com.phonebook;
 
 
-
 import com.phonebook.model.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
+    @BeforeMethod
+    public void preCondition() {
+        logger.info("Hello ******@BeforeMethod");
+    }
 
     @Test
-    public void loginExistedUserPositiveTest () {
-
-
-
+    public void loginExistedUserPositiveTest() {
         // click on login link
         // click(By.xpath("//a[(.= 'LOGIN')]"));
         app.getUserHelper().clickLoginLink();
@@ -33,13 +34,14 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void loginExistedUserPositiveTest2 () {
+    public void loginExistedUserPositiveTest2() {
+        logger.info("Hello ********@Test");
         app.getUserHelper().login("anlii2025test.2025@gmail.com", "Password101$");
 
     }
 
     @Test
-    public void loginNegativeWOEmailTest () {
+    public void loginNegativeWOEmailTest() {
         app.getUserHelper().clickLoginLink();
         app.getUserHelper().fillInRegistrationForm(new User()
                 //.setPassword("anliji225test.2023@gmail.com")

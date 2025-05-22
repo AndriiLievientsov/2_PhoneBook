@@ -1,0 +1,13 @@
+18:54:58.186 [main] INFO  com.phonebook.TestBase -- Hello world
+18:54:58.254 [main] INFO  com.phonebook.core.BaseHelper -- [By.xpath: //a[(.= 'LOGIN')]] is pressed
+18:54:58.255 [main] ERROR com.phonebook.core.BaseHelper -- [By.xpath: //a[(.= 'LOGIN')]] is pressed
+18:54:58.255 [main] ERROR com.phonebook.core.BaseHelper -- [By.xpath: //a[(.= 'LOGIN')]] and By.xpath: //a[(.= 'LOGIN')] is pressed
+18:54:58.303 [main] INFO  com.phonebook.core.BaseHelper -- [By.name: email] is pressed
+18:54:58.303 [main] ERROR com.phonebook.core.BaseHelper -- [By.name: email] is pressed
+18:54:58.303 [main] ERROR com.phonebook.core.BaseHelper -- [By.name: email] and By.name: email is pressed
+18:54:58.413 [main] INFO  com.phonebook.core.BaseHelper -- [By.name: password] is pressed
+18:54:58.414 [main] ERROR com.phonebook.core.BaseHelper -- [By.name: password] is pressed
+18:54:58.414 [main] ERROR com.phonebook.core.BaseHelper -- [By.name: password] and By.name: password is pressed
+18:54:58.504 [main] INFO  com.phonebook.core.BaseHelper -- [By.name: login] is pressed
+18:54:58.504 [main] ERROR com.phonebook.core.BaseHelper -- [By.name: login] is pressed
+18:54:58.504 [main] ERROR com.phonebook.core.BaseHelper -- [By.name: login] and By.name: login is pressed

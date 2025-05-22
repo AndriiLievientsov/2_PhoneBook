@@ -30,13 +30,15 @@ public class BaseHelper {
      * {@code false} — если элемент отсутствует.
      */
     public boolean isElementPresent(By locator) {
-        System.out.println("Есть лит элемент [" + locator + "] на странице");
+      //  System.out.println("Есть лит элемент [" + locator + "] на странице");
         return driver.findElements(locator).size() > 0;
     }
 
     public void click(By locator) {
         driver.findElement(locator).click();
-        logger.info("["+ locator + "] is pressed");
+       // logger.info("["+ locator + "] is pressed"); //ниже идут два примера логеров
+//        logger.error("["+ locator + "] is pressed");
+//        logger.error("[{}] and {} is pressed", locator, locator);
     }
 
     public void type(By locator, String text) {

@@ -1,0 +1,7 @@
+19:47:00.737 [main] INFO  com.phonebook.TestBase -- Hello **@BeforeSuite
+19:47:00.737 [main] INFO  com.phonebook.TestBase -- Hello ****@BeforeSuite
+19:47:03.501 [main] INFO  com.phonebook.TestBase -- Hello world
+19:47:03.566 [main] INFO  com.phonebook.core.BaseHelper -- [By.xpath: //a[(.= 'LOGIN')]] is pressed
+19:47:03.614 [main] INFO  com.phonebook.core.BaseHelper -- [By.name: email] is pressed
+19:47:03.721 [main] INFO  com.phonebook.core.BaseHelper -- [By.name: password] is pressed
+19:47:03.808 [main] INFO  com.phonebook.core.BaseHelper -- [By.name: login] is pressed

@@ -1,0 +1,2 @@
+19:48:35.577 [main] INFO  com.phonebook.TestBase -- Hello **@BeforeSuite
+19:48:35.593 [main] INFO  com.phonebook.TestBase -- Hello ****@BeforeSuite
