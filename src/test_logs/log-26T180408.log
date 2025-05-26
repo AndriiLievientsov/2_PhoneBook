@@ -1,0 +1,2 @@
+18:04:09.557 [main] INFO  com.phonebook.TestBase -- Hello ******@BeforeMethod
+18:04:09.558 [main] INFO  com.phonebook.TestBase -- Hello ********@Test

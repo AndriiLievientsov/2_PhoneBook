@@ -1,0 +1,7 @@
+16:53:42.809 [main] INFO  com.phonebook.TestBase -- Hello **@BeforeSuite
+16:53:42.828 [main] INFO  com.phonebook.TestBase -- Hello ****@BeforeClass
+16:53:43.955 [main] INFO  com.phonebook.TestBase -- Hello ******@BeforeMethod
+16:53:43.955 [main] INFO  com.phonebook.TestBase -- Hello ********@Test
+16:53:45.991 [main] INFO  com.phonebook.TestBase -- Hello ******@AfterMethod
+16:53:46.093 [main] INFO  com.phonebook.TestBase -- Hello ****@AfterClass
+16:53:46.095 [main] INFO  com.phonebook.TestBase -- Hello **@AfterSuite

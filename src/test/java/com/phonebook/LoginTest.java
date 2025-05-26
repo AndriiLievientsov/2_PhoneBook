@@ -3,6 +3,7 @@ package com.phonebook;
 
 import com.phonebook.model.User;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -23,8 +24,8 @@ public class LoginTest extends TestBase {
         // type(By.name("password"), "Password101$");
         //fillInRegistrationForm(new User("anliji225test.2023@gmail.com", "Password101$"));
         app.getUserHelper().fillInRegistrationForm(new User()
-                .setPassword("anliji225test.2023@gmail.com")
-                .setEmail("Password101$"));
+                .setEmail("anlii2025test.2025@gmail.com")
+                .setPassword("Password101$"));
         // click on Login button
         // click(By.name("login"));
         app.getUserHelper().clickOnLoginButton();
@@ -40,6 +41,8 @@ public class LoginTest extends TestBase {
 
     }
 
+
+    //так как это негативный тест. то падает. Негативные лучше не смешивать с позитивными
     @Test
     public void loginNegativeWOEmailTest() {
         app.getUserHelper().clickLoginLink();
@@ -50,5 +53,20 @@ public class LoginTest extends TestBase {
         Assert.assertTrue(app.getContactHelper().isAlertPresent());//к isAlertPresent можно достучаться через любой Helper
     }
 
+
+//    @AfterMethod
+//    public void postCondition() {
+//        logger.info("Hello ******@AfterMethod"); убрали из за ненадобности
+//    }
+
+
+    @AfterMethod
+    public void postConditions() {
+        try {
+            app.getUserHelper().logout();
+        } catch (Exception e) {
+//            throw new RuntimeException(e);
+        }
+    }
 
 }

@@ -68,7 +68,8 @@ public class UserHelper extends BaseHelper {
     }
 
     public boolean isSignOutButtonPresent() {
-        return isElementPresent(By.xpath("//button [.='Sign Out']"));
+//        return isElementPresent(By.xpath("//button [.='Sign Out']"));
+        return isElementPresent(By.xpath("//button[.='Sign Out']"));
     }
 
     public void clickOnLoginButton() {
