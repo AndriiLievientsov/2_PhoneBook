@@ -1,0 +1,5 @@
+20:31:38.954 [main] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+20:31:40.317 [main] INFO  com.phonebook.TestBase -- Test is started: [loginExistedUserPositiveTest2]
+20:31:41.746 [main] INFO  com.phonebook.core.BaseHelper -- Screenshot save to path: [C:\Users\Apafios\Desktop\2_PhoneBook\src\test_screenshot\screen-1748539901547.png]
+20:31:41.746 [main] INFO  com.phonebook.TestBase -- Test is FAILED: [loginExistedUserPositiveTest2], Screenshot: [C:\Users\Apafios\Desktop\2_PhoneBook\src\test_screenshot\screen-1748539901547.png]
+20:31:41.748 [main] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************

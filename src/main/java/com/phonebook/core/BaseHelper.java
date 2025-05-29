@@ -1,13 +1,14 @@
 package com.phonebook.core;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.Duration;
 
 public class BaseHelper {
@@ -62,5 +63,18 @@ public class BaseHelper {
             return true;
         }
 
+    }
+
+    public String takeScreenshot () {
+        File screenshot = new File("src/test_screenshot/screen-" + System.currentTimeMillis() + ".png");
+        try {
+            File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            Files.copy(tmp.toPath(), screenshot.toPath());
+        } catch (IOException e) {
+            logger.error("Failed to save screenshot", e);
+            throw new RuntimeException(e);
+        }
+        //logger.info("Screenshot save to path: [" + screenshotPath + "]"); закомител бо дублирует инфу
+        return screenshot.getAbsolutePath();
     }
 }

@@ -1,0 +1,4 @@
+19:43:24.545 [main] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+19:43:25.794 [main] INFO  com.phonebook.TestBase -- Test is Started: [loginExistedUserPositiveTest2]
+19:43:26.944 [main] INFO  com.phonebook.TestBase -- Test is ended: [loginExistedUserPositiveTest2]
+19:43:26.946 [main] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************

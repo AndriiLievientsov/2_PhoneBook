@@ -3,7 +3,11 @@ package com.phonebook;
 import com.phonebook.core.ApplicationManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.ITest;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
 
 
 public class TestBase {
@@ -24,14 +28,33 @@ public class TestBase {
     //@BeforeMethod
     @BeforeSuite
     public void setUp () {
+        logger.info("*************************** TESTING IN PROGRESS ***************************");
         app.init();
-      //  logger.info("Hello world");
-
     }
+
+    @BeforeMethod
+    public void startTest (Method method) {
+        logger.info("Test is started: [" + method.getName() +"]");
+    }
+
+
+    @AfterMethod
+    public void stopTest (Method method, ITestResult result) {
+         if(result.isSuccess()) {
+             logger.info("Test is PASSED: [" + method.getName() +"]");
+         }else  {
+             logger.info("Test is FAILED: [" + method.getName() +"], Screenshot: [" + app.getUserHelper().takeScreenshot() + "]");
+         }
+
+       // logger.info("Test is ended: [" + method.getName() +"]");
+    }
+
+
 
     //@AfterMethod (enabled = true)
     @AfterSuite (enabled = true)
     public void tearDown () {
+        logger.info("*************************** ALL TEST END ***************************");
         app.stop();
     }
 

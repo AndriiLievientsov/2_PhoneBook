@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends TestBase {
     @BeforeMethod
     public void preCondition() {
-        logger.info("Hello ******@BeforeMethod");
+        //logger.info("Hello ******@BeforeMethod");
     }
 
     @Test
@@ -36,7 +36,7 @@ public class LoginTest extends TestBase {
 
     @Test
     public void loginExistedUserPositiveTest2() {
-        logger.info("Hello ********@Test");
+        //logger.info("Hello ********@Test");
         app.getUserHelper().login("anlii2025test.2025@gmail.com", "Password101$");
 
     }
