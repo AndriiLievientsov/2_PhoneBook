@@ -54,15 +54,39 @@ public class BaseHelper {
 
     }
 
-    public boolean isAlertPresent() {
-        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.alertIsPresent());
-        if (alert == null) {
-            return false;
-        } else {
-            driver.switchTo().alert().accept();
-            return true;
-        }
 
+    //Метод ниже переписал согласно Преподу. но старый оставил
+//    public boolean isAlertPresent() {
+//        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.alertIsPresent());
+//        if (alert == null) {
+//            return false;
+//        } else {
+//            driver.switchTo().alert().accept();
+//            return true;
+//        }
+//
+//    }
+
+
+
+    public boolean isAlertPresent() {
+        try {
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            if (alert == null) {
+                return false;
+            } else {
+    //            wait.until(ExpectedConditions.alertIsPresent());
+                logger.warn("Alert has text: [" + driver.switchTo().alert().getText() + "]");
+    //            System.out.println("\nAlert has text: " + driver.switchTo().alert().getText() + "\n");
+                alert.accept();
+                //driver.switchTo().alert().accept();
+                return true;
+            }
+        } catch (Exception e) {
+            logger.info(e.getMessage());
+           // throw new RuntimeException(e);
+        }
+        return false;
     }
 
     public String takeScreenshot () {

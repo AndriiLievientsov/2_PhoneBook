@@ -43,10 +43,18 @@ public class TestBase {
          if(result.isSuccess()) {
              logger.info("Test is PASSED: [" + method.getName() +"]");
          }else  {
-             logger.info("Test is FAILED: [" + method.getName() +"], Screenshot: [" + app.getUserHelper().takeScreenshot() + "]");
+             //проверяем наличие алерта и закрываем его с помощью isAlertPresent
+             if (app.getUserHelper().isAlertPresent()){
+                 logger.warn("Alert was present and has been accepted");
+             }else {
+                 logger.info("No alert present");
+             }
+             //Теперь делаем скриншот
+             String screenshotPath = app.getContactHelper().takeScreenshot();
+             logger.info("Test is FAILED: [" + method.getName() +"], Screenshot: [" + screenshotPath + "]");
          }
 
-       // logger.info("Test is ended: [" + method.getName() +"]");
+       logger.info("Test is ended: [" + method.getName() +"]");
     }
 
 

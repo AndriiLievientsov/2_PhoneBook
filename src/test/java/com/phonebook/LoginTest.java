@@ -54,10 +54,6 @@ public class LoginTest extends TestBase {
     }
 
 
-//    @AfterMethod
-//    public void postCondition() {
-//        logger.info("Hello ******@AfterMethod"); убрали из за ненадобности
-//    }
 
 
     @AfterMethod

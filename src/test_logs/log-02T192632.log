@@ -1,0 +1,5 @@
+19:26:33.224 [main] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+19:26:34.621 [main] INFO  com.phonebook.TestBase -- Test is started: [loginNegativeWOEmailTest]
+19:26:41.415 [main] INFO  com.phonebook.TestBase -- Test is PASSED: [loginNegativeWOEmailTest]
+19:26:41.415 [main] INFO  com.phonebook.TestBase -- Test is ended: [loginNegativeWOEmailTest]
+19:26:41.417 [main] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************

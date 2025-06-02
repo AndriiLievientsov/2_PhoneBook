@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ApplicationManager {
-    WebDriver driver;
+    public WebDriver driver;
     public WebDriverWait wait;
 
     UserHelper userHelper;
@@ -48,7 +48,7 @@ public class ApplicationManager {
 
         driver.get("https://telranedu.web.app/home");
         //driver.manage().window().maximize(); // на весь экран
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //неявное ожидание
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); //неявное ожидание
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         userHelper = new UserHelper(driver, wait);
