@@ -1,0 +1,6 @@
+15:12:26.867 [main] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+15:12:28.358 [main] INFO  com.phonebook.TestBase -- Test is started: [loginExistedUserPositiveTest2]
+15:12:29.796 [main] INFO  com.phonebook.TestBase -- Test is started with data: [password=Password101$, email=anlii2025test.2025@gmail.com, ]
+15:12:29.796 [main] INFO  com.phonebook.TestBase -- Test is PASSED: [loginExistedUserPositiveTest2], with data: [password=Password101$, email=anlii2025test.2025@gmail.com, ]
+15:12:29.796 [main] INFO  com.phonebook.TestBase -- Test is ended: [loginExistedUserPositiveTest2]
+15:12:29.799 [main] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************

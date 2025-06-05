@@ -47,7 +47,7 @@ public class ApplicationManager {
         }
 
         driver.get("https://telranedu.web.app/home");
-        //driver.manage().window().maximize(); // на весь экран
+        driver.manage().window().maximize(); // на весь экран
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); //неявное ожидание
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
@@ -73,3 +73,4 @@ public class ApplicationManager {
         driver.quit();
     }
 }
+

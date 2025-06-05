@@ -70,35 +70,40 @@ public class BaseHelper {
 
 
     public boolean isAlertPresent() {
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         try {
-            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-            if (alert == null) {
-                return false;
-            } else {
-    //            wait.until(ExpectedConditions.alertIsPresent());
-                logger.warn("Alert has text: [" + driver.switchTo().alert().getText() + "]");
-    //            System.out.println("\nAlert has text: " + driver.switchTo().alert().getText() + "\n");
-                alert.accept();
-                //driver.switchTo().alert().accept();
-                return true;
-            }
-        } catch (Exception e) {
-            logger.info(e.getMessage());
-           // throw new RuntimeException(e);
+            logger.warn("Alert has text: [" + alert.getText() + "]");
+            alert.accept();
+            return true;
+        } catch (Exception ignore) {
+            return false;
         }
-        return false;
     }
 
+    public String alertTextPresent() {
+        return  wait.until(ExpectedConditions.alertIsPresent()).getText();
+    }
+
+
+
     public String takeScreenshot () {
+        //Создаем объект File для сохранения скриншота добавляя текущую метку времени в названии файла
         File screenshot = new File("src/test_screenshot/screen-" + System.currentTimeMillis() + ".png");
         try {
+            //получаем временный файл скриншота с помощью интерфейса TakeScreenshot
             File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+            // Копируем временный файл в постоянное место назначения (в созданный ранее файл screenshot)
             Files.copy(tmp.toPath(), screenshot.toPath());
+        } catch (NoSuchSessionException e) {
+            logger.error("WebDriver session is closed, cannot take screenshot", e);
+            return "";//Возвращаем пустую строку чтобы тест не падал
         } catch (IOException e) {
+            // Логируем ошибку при сохранении скриншота и выбрасываем исключение RuntimeException
             logger.error("Failed to save screenshot", e);
             throw new RuntimeException(e);
         }
-        //logger.info("Screenshot save to path: [" + screenshotPath + "]"); закомител бо дублирует инфу
+        // Возвращаем путь к сохраненному скриншоту
         return screenshot.getAbsolutePath();
     }
 }

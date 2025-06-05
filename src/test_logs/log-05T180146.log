@@ -1,0 +1,14 @@
+18:01:46.493 [Test worker] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+18:01:48.638 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [isComponentPresentTest]
+18:01:48.691 [Test worker] INFO  com.phonebook.TestBase -- Test is started with data: []
+18:01:48.691 [Test worker] INFO  com.phonebook.TestBase -- Test is PASSED: [isComponentPresentTest], with data: []
+18:01:48.691 [Test worker] INFO  com.phonebook.TestBase -- Test is ended: [isComponentPresentTest]
+18:01:48.694 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [addContactPositiveTest]
+18:01:52.659 [Test worker] INFO  com.phonebook.TestBase -- Test is started with data: []
+18:01:52.660 [Test worker] INFO  com.phonebook.TestBase -- Test is PASSED: [addContactPositiveTest], with data: []
+18:01:52.660 [Test worker] INFO  com.phonebook.TestBase -- Test is ended: [addContactPositiveTest]
+18:01:52.660 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [addContactPositiveWODescriptionTest]
+18:01:57.673 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [createOneAndDeleteOneContractTest]
+18:02:02.682 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [loginExistedUserPositiveTest]
+18:02:07.915 [Test worker] INFO  com.phonebook.TestBase -- Test is started with data: []
+18:02:13.058 [Test worker] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************

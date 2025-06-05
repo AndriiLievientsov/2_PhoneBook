@@ -1,0 +1,10 @@
+16:06:21.641 [Test worker] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+16:06:22.888 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [createAccountNegativeTest1]
+16:06:24.251 [Test worker] WARN  com.phonebook.core.BaseHelper -- Alert has text: [Wrong email or password format
+            Email must contains one @ and minimum 2 symbols after last dot
+            Password must contain at least one uppercase letter!
+            Password must contain at least one lowercase letter!
+            Password must contain at least one digit!
+            Password must contain at least one special symbol from [‘$’,’~’,’-‘,’_’]!]
+16:06:29.289 [Test worker] INFO  com.phonebook.TestBase -- Test is started with data: []
+16:06:34.446 [Test worker] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************

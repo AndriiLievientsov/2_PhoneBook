@@ -3,6 +3,7 @@ package com.phonebook;
 
 import com.phonebook.model.User;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -35,22 +36,39 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void loginExistedUserPositiveTest2() {
-        //logger.info("Hello ********@Test");
-        app.getUserHelper().login("anlii2025test.2025@gmail.com", "Password101$");
+    public void loginExistedUserPositiveTest2(ITestContext context) {
+        String email = "anlii2025test.2025@gmail.com";
+        String password = "Password101$";
+
+        context.setAttribute("email", email);
+        context.setAttribute("password", password);
+        app.getUserHelper().login(email, password);
 
     }
 
 
-    //так как это негативный тест. то падает. Негативные лучше не смешивать с позитивными
+
     @Test
     public void loginNegativeWOEmailTest() {
+//        app.getUserHelper().clickLoginLink();
+//        app.getUserHelper().fillInRegistrationForm(new User()
+//                //.setPassword("anliji225test.2023@gmail.com")
+//                .setEmail("Password101$"));
+//        app.getUserHelper().clickOnLoginButton();
+/// /       System.out.println(app.getUserHelper().alertTextPresent());
+//
+
+//        Assert.assertEquals(app.getUserHelper().alertTextPresent(), "Wrong email or password", "Messages are not equals");
+//        Assert.assertTrue(app.getContactHelper().isAlertPresent());//к isAlertPresent можно достучаться через любой Helper
+
+
         app.getUserHelper().clickLoginLink();
         app.getUserHelper().fillInRegistrationForm(new User()
-                //.setPassword("anliji225test.2023@gmail.com")
-                .setEmail("Password101$"));
+                //  .setEmail("admin_admin_20242@gmail.com")
+                .setPassword("Password1@"));
         app.getUserHelper().clickOnLoginButton();
-        Assert.assertTrue(app.getContactHelper().isAlertPresent());//к isAlertPresent можно достучаться через любой Helper
+        Assert.assertEquals(app.getUserHelper().alertTextPresent(), "Wrong email or password", "Messages are not equals");
+        Assert.assertTrue(app.getContactHelper().isAlertPresent());
     }
 
 
