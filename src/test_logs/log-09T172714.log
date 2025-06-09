@@ -1,0 +1,7 @@
+17:27:15.252 [main] INFO  HW2.TestBaseHW2 -- *************************** TESTING HW, IN PROGRESS ***************************
+17:27:15.278 [main] INFO  HW2.TestBaseHW2 -- Test is started: [loginRandoUserDataOut]
+17:27:16.973 [main] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:27:18.288 [main] INFO  HW2.TestBaseHW2 -- Test is started with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:27:18.288 [main] INFO  HW2.TestBaseHW2 -- Test is PASSED: [loginRandoUserDataOut], with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:27:18.288 [main] INFO  HW2.TestBaseHW2 -- Test is ended: [loginRandoUserDataOut]
+17:27:18.291 [main] INFO  HW2.TestBaseHW2 -- *************************** ALL HW TEST END ***************************

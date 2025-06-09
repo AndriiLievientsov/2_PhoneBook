@@ -1,0 +1,7 @@
+17:26:54.775 [main] INFO  HW2.TestBaseHW2 -- *************************** TESTING HW, IN PROGRESS ***************************
+17:26:54.805 [main] INFO  HW2.TestBaseHW2 -- Test is started: [loginRandoUser]
+17:26:56.504 [main] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:27:00.602 [main] INFO  HW2.TestBaseHW2 -- Test is started with data: []
+17:27:00.602 [main] INFO  HW2.TestBaseHW2 -- Test is PASSED: [loginRandoUser], with data: []
+17:27:00.602 [main] INFO  HW2.TestBaseHW2 -- Test is ended: [loginRandoUser]
+17:27:00.604 [main] INFO  HW2.TestBaseHW2 -- *************************** ALL HW TEST END ***************************

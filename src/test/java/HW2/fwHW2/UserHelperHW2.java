@@ -1,15 +1,21 @@
 package HW2.fwHW2;
 
 import HW2.coreHW2.BaseHelperHW2;
+import HW2.modelHW2.UserHW2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class UserHelperHW2 extends BaseHelperHW2 {
     public UserHelperHW2(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
+
 
     public void NewRegister (String First, String Second, String Email,
                              String Password, String ConfirmPassword) {
@@ -62,4 +68,22 @@ public class UserHelperHW2 extends BaseHelperHW2 {
     public void logoutAfterLogin () {
         select(By.xpath("//a[normalize-space()='Log out']"));
     }
+
+    public void clickOnLoginButton () {
+        select(By.xpath("//a[normalize-space(text())='Log in']"));
+    }
+    public void selectLoginButtonOnLogPage() {
+        select(By.xpath("//input[@class='button-1 login-button']"));
+    }
+
+    public void fillLoginForm (UserHW2 userHW2) {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("Email")));
+
+        typeData(By.name("Email"), userHW2.getEmail());
+        typeData(By.name("Password"), userHW2.getPassword());
+    }
+
+
+
 }

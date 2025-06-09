@@ -46,6 +46,7 @@ public class ApplicationManagerHW2 {
 
         }
 
+
     public CartHW2 getCartHW2() {
         return cartHW2;
     }

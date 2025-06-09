@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="PositiveHW2Test" verbose="1">
+    <test name="PositiveHW2">
+        <classes>
+            <class name="HW2.RandomNameAccountTest">
+                <methods>
+                    <include name=".*User.*"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

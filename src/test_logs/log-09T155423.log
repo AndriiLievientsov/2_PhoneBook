@@ -1,0 +1,7 @@
+15:54:23.886 [main] INFO  HW2.TestBaseHW2 -- *************************** TESTING HW, IN PROGRESS ***************************
+15:54:23.912 [main] INFO  HW2.TestBaseHW2 -- Test is started: [loginAccountL]
+15:54:27.681 [main] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+15:54:28.932 [main] INFO  HW2.TestBaseHW2 -- Test is started with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+15:54:28.933 [main] INFO  HW2.TestBaseHW2 -- Test is PASSED: [loginAccountL], with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+15:54:28.933 [main] INFO  HW2.TestBaseHW2 -- Test is ended: [loginAccountL]
+15:54:28.935 [main] INFO  HW2.TestBaseHW2 -- *************************** ALL HW TEST END ***************************

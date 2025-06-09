@@ -1,0 +1,7 @@
+16:10:30.754 [main] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+16:10:30.775 [main] INFO  com.phonebook.TestBase -- Test is started: [loginNegativeWOEmailTest]
+16:10:33.235 [main] WARN  com.phonebook.core.BaseHelper -- Alert has text: [Wrong email or password]
+16:10:38.290 [main] INFO  com.phonebook.TestBase -- Test is started with data: []
+16:10:38.291 [main] INFO  com.phonebook.TestBase -- Test is PASSED: [loginNegativeWOEmailTest], with data: []
+16:10:38.291 [main] INFO  com.phonebook.TestBase -- Test is ended: [loginNegativeWOEmailTest]
+16:10:38.294 [main] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************

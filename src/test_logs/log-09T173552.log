@@ -1,0 +1,17 @@
+17:35:53.156 [Test worker] INFO  HW2.TestBaseHW2 -- *************************** TESTING HW, IN PROGRESS ***************************
+17:35:53.189 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started: [loginRandoUser]
+17:35:55.012 [Test worker] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:35:59.035 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started with data: []
+17:35:59.035 [Test worker] INFO  HW2.TestBaseHW2 -- Test is PASSED: [loginRandoUser], with data: []
+17:35:59.035 [Test worker] INFO  HW2.TestBaseHW2 -- Test is ended: [loginRandoUser]
+17:35:59.036 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started: [loginRandoUserDataOut]
+17:36:00.388 [Test worker] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:36:01.689 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:36:01.689 [Test worker] INFO  HW2.TestBaseHW2 -- Test is PASSED: [loginRandoUserDataOut], with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:36:01.689 [Test worker] INFO  HW2.TestBaseHW2 -- Test is ended: [loginRandoUserDataOut]
+17:36:01.690 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started: [registerRandomUser]
+17:36:03.070 [Test worker] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:36:05.219 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:36:05.220 [Test worker] INFO  HW2.TestBaseHW2 -- Test is PASSED: [registerRandomUser], with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:36:05.220 [Test worker] INFO  HW2.TestBaseHW2 -- Test is ended: [registerRandomUser]
+17:36:05.222 [Test worker] INFO  HW2.TestBaseHW2 -- *************************** ALL HW TEST END ***************************

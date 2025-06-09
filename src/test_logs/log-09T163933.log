@@ -1,0 +1,5 @@
+16:39:33.503 [main] INFO  HW2.TestBaseHW2 -- *************************** TESTING HW, IN PROGRESS ***************************
+16:39:33.525 [main] INFO  HW2.TestBaseHW2 -- Test is started: [loginNegativeUserTest]
+16:39:35.242 [main] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+16:39:41.135 [main] INFO  HW2.TestBaseHW2 -- Test is started with data: []
+16:39:46.255 [main] INFO  HW2.TestBaseHW2 -- *************************** ALL HW TEST END ***************************

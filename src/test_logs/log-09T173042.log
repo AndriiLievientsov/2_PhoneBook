@@ -1,0 +1,32 @@
+17:30:42.297 [Test worker] INFO  HW2.TestBaseHW2 -- *************************** TESTING HW, IN PROGRESS ***************************
+17:30:42.300 [Test worker] INFO  com.phonebook.TestBase -- *************************** TESTING IN PROGRESS ***************************
+17:30:42.332 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [createAccountNegativeTest]
+17:30:50.094 [Test worker] WARN  com.phonebook.core.BaseHelper -- Alert has text: [User already exist]
+17:30:50.106 [Test worker] INFO  com.phonebook.TestBase -- Test is started with data: []
+17:30:50.107 [Test worker] INFO  com.phonebook.TestBase -- Test is PASSED: [createAccountNegativeTest], with data: []
+17:30:50.107 [Test worker] INFO  com.phonebook.TestBase -- Test is ended: [createAccountNegativeTest]
+17:30:50.110 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [loginExistedUserPositiveTest]
+17:30:54.218 [Test worker] INFO  com.phonebook.TestBase -- Test is started with data: []
+17:30:54.218 [Test worker] INFO  com.phonebook.TestBase -- Test is PASSED: [loginExistedUserPositiveTest], with data: []
+17:30:54.219 [Test worker] INFO  com.phonebook.TestBase -- Test is ended: [loginExistedUserPositiveTest]
+17:30:54.219 [Test worker] INFO  com.phonebook.TestBase -- Test is started: [loginExistedUserPositiveTest2]
+17:30:58.772 [Test worker] INFO  com.phonebook.TestBase -- Test is started with data: [password=Password101$, email=anlii2025test.2025@gmail.com, ]
+17:30:58.773 [Test worker] INFO  com.phonebook.TestBase -- Test is PASSED: [loginExistedUserPositiveTest2], with data: [password=Password101$, email=anlii2025test.2025@gmail.com, ]
+17:30:58.773 [Test worker] INFO  com.phonebook.TestBase -- Test is ended: [loginExistedUserPositiveTest2]
+17:30:58.774 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started: [loginRandoUser]
+17:31:01.635 [Test worker] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:31:08.110 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started with data: [password=Password101$, email=anlii2025test.2025@gmail.com, ]
+17:31:08.110 [Test worker] INFO  HW2.TestBaseHW2 -- Test is PASSED: [loginRandoUser], with data: [password=Password101$, email=anlii2025test.2025@gmail.com, ]
+17:31:08.110 [Test worker] INFO  HW2.TestBaseHW2 -- Test is ended: [loginRandoUser]
+17:31:08.111 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started: [loginRandoUserDataOut]
+17:31:10.685 [Test worker] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:31:12.601 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:31:12.601 [Test worker] INFO  HW2.TestBaseHW2 -- Test is PASSED: [loginRandoUserDataOut], with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:31:12.601 [Test worker] INFO  HW2.TestBaseHW2 -- Test is ended: [loginRandoUserDataOut]
+17:31:12.602 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started: [registerRandomUser]
+17:31:15.198 [Test worker] INFO  HW2.TestBaseHW2 -- Выводится после метода 
+17:31:19.279 [Test worker] INFO  HW2.TestBaseHW2 -- Test is started with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:31:19.279 [Test worker] INFO  HW2.TestBaseHW2 -- Test is PASSED: [registerRandomUser], with data: [password=b5555@gmail.com, email=b5555@gmail.com, ]
+17:31:19.280 [Test worker] INFO  HW2.TestBaseHW2 -- Test is ended: [registerRandomUser]
+17:31:19.281 [Test worker] INFO  HW2.TestBaseHW2 -- *************************** ALL HW TEST END ***************************
+17:31:19.824 [Test worker] INFO  com.phonebook.TestBase -- *************************** ALL TEST END ***************************
