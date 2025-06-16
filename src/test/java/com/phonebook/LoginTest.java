@@ -9,9 +9,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
+
     @BeforeMethod
     public void preCondition() {
-        //logger.info("Hello ******@BeforeMethod");
+//        if (!app.getUserHelper().isSignOutButtonPresent()) {
+//            app.getUserHelper().logout();
+//        }
+//        app.driver.get("https://telranedu.web.app/login"); пример прикондишина. но чего то ломает Логин
+
     }
 
     @Test
