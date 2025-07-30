@@ -16,7 +16,12 @@ dependencies {
     implementation 'org.testng:testng:7.11.0'
 //    implementation 'org.slf4j:slf4j-nop:2.0.7'
 //    implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
-    implementation 'org.seleniumhq.selenium:selenium-java:+'
+ //   implementation 'org.seleniumhq.selenium:selenium-java:+'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.34.0'
+
+
+
+
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.18'
 }
 

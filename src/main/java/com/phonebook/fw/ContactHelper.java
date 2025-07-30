@@ -52,7 +52,7 @@ public class ContactHelper  extends BaseHelper {
                 clickSaveContactButton();
     }
 
-    private void fillInNewContactForm(Contact constructor) {
+    public void fillInNewContactForm(Contact constructor) {
         type(By.xpath("//input[@placeholder='Name']"), constructor.getName());
         type(By.xpath("//input[@placeholder='Last Name']"), constructor.getLastName());
         type(By.xpath("//input[@placeholder='Phone']"), constructor.getPhone());
@@ -61,11 +61,11 @@ public class ContactHelper  extends BaseHelper {
         type(By.xpath("//input[@placeholder='description']"), constructor.getDescription());
     }
 
-    private void clickSaveContactButton() {
+    public void clickSaveContactButton() {
         click(By.xpath("//b[contains(text(),'Save')]"));
     }
 
-    private void clickAddLink() {
+    public void clickAddLink() {
         click(By.xpath("//a[contains(text(),'ADD')]"));
     }
 
